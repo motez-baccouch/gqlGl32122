@@ -1,7 +1,7 @@
 export const Query = {
     hello: (_, { name }) => `Hello ${name || "World"}`,
     getTodos: (parent, args, { db }, info) => {
-      console.log("heheheheheheheh");
+      
       console.log(db);
       return db.todos;
     },
