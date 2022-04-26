@@ -1,44 +1,37 @@
 export const db = {
-    students : [
-        {
-            id: 1,
-            name: 'Fatma Laribi',
-            age: 22,
-            gender: "FEMALE",
-            classroom: 1
-        },
-        {
-            id: 2,
-            name: 'Ahmed Mahfoudhi',
-            age: 22,
-            gender: "MALE",
-            classroom: 2
-        },
-        {
-            id: 3,
-            name: 'Nadine Boukadida',
-            age: 22,
-            gender: "FEMALE",
-            classroom: 3
-        },
-        {
-            id: 4,
-            name: 'Mohamed Aziz Khayati',
-            age: 22,
-            gender: "MALE",
-            classroom: 1
-        }
+    todos: [
+      {
+        id: 1,
+        name: "Gaming",
+        content: "jouer toute la journée",
+        status: "IN_PROGRESS",
+        userId: 1
+      },
+      {
+        id: 2,
+        name: "manger",
+        content: "manger du couscous",
+        status: "WAITING",
+        userId: 2
+      },
+      {
+        id: 3,
+        name: "prendre une douche",
+        content: "prendre une douche apres avoir pratiquer du sport",
+        status: "DONE",
+        userId: 1
+      }
     ],
-    classroom: [
-        {
-            id: 1,
-            designation: 'GL3'
-        },{
-            id: 2,
-            designation: 'GL2'
-        },{
-            id: 3,
-            designation: 'GL4'
-        },
+    users: [
+      {
+        id: 1,
+        name: 'motez',
+        email: 'motezbaccouch2@gmail.com'
+      },
+      {
+        id: 2,
+        name: 'taoufik',
+        email: 'taoufik@gmail.com'
+      }
     ]
-}
+  };

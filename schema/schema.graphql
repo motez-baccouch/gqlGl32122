@@ -1,27 +1,34 @@
-type Infos {
-    name: String!
-    firstname: String!
-}
-enum Gender {
-    MALE
-    FEMALE
-}
-type Student {
-    id: ID!
-    name: String!
-    age: Int!
-    gender: Gender!
-    classroom: Classroom
-}
-type Classroom {
-    id: ID!
-    designation: String!
-    students: [Student!]
-}
 type Query {
-    hello(name: String): String!
-    infos: Infos!
-    getAllStudents: [Student]
-    getStudent(id:ID!): Student
+  hello(name: String): String!
+  getTodos: [Todo]!
+  getTodoById(id: Int): Todo!
+  getUsers: [User]!
+  getUserById(id: Int): User!
+}
+
+
+
+enum TodoStatusEnum {
+  WAITING
+  IN_PROGRESS
+  CANCLED
+  DONE
+}
+
+
+
+type Todo {
+  id: ID!
+  name: String!
+  content: String!
+  status: TodoStatusEnum!
+  user: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  todos: [Todo]
 }
 

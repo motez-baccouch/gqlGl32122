@@ -1,25 +1,23 @@
-import { db } from "../data/db.js";
-
 export const Query = {
-    hello: (parent, args, context, info) => {
-        console.log('parent : ', parent);
-        console.log('context : ', context);
-        console.log('info : ', info);
-        console.log('args : ', args);
-        return `Hello ${args.name || 'World'}`;
+    hello: (_, { name }) => `Hello test ${name || "World"}`,
+    getTodos: (parent, args, { db }, info) => {
+      return db.todos;
     },
-    infos: () => {
-        return {
-            name: 'Sellaouti',
-            firstname: 'Aymen'
-        }
+    getTodoById: (parent, { id }, { db }, info) => {
+      const todo = db.todos.find((todo) => todo.id === id);
+      if (!todo) {
+        throw new Error(`this ${id} does not exist please try another one <3 `);
+      }
+      return todo;
     },
-    getAllStudents: () => {
-        return db.students;
+    getUsers: (parent, args, { db }, info) => {
+      return db.users;
     },
-    getStudent: (_, {id}) => {
-        return db.students.find(
-            (student) => student.id == id
-        );
-    }
-}
+    getUserById: (parent, { id }, { db }, info) => {
+      const user = db.users.find((user) => user.id === id);
+      if (!user) {
+        throw new Error(`this user id ${id}  does not exist please try anotehr one <3 `);
+      }
+      return user;
+    },
+  };
