@@ -20,7 +20,20 @@ enum TodoStatusEnum {
   DONE
 }
 
+type Subscription {
+  todo: TodoSubscriptioPayload!
+}
 
+type TodoSubscriptioPayload {
+  todo: Todo!
+  mutation: MutationType!
+}
+
+enum MutationType {
+  UPDATE
+  DELETE
+  ADD
+}
 
 type Todo {
   id: ID!
