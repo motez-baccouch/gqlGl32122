@@ -7,6 +7,10 @@ type Query {
 }
 
 
+type Infos {
+    binome: String!
+    classe: String!
+}
 
 enum TodoStatusEnum {
   WAITING
@@ -32,3 +36,21 @@ type User {
   todos: [Todo]
 }
 
+type Mutation {
+  addTodo(ajoutTodoInput: AjoutTodoInput): Todo!
+  updateTodo(id: Int!, modifierTodoInput: ModifierTodoInput!): Todo!
+  deleteTodo(id: Int!): Todo!
+}
+
+input AjoutTodoInput {
+  name: String!
+  content: String!
+  userId: Int!
+}
+
+input ModifierTodoInput {
+  name: String
+  content: String
+  userId: Int
+  status: TodoStatusEnum
+}

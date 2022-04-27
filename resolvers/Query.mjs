@@ -5,6 +5,12 @@ export const Query = {
       console.log(db);
       return db.todos;
     },
+    infos: () => {
+      return {
+          binome: 'motez Baccouch et Taoufik Kaabi',
+          classe: 'GL3 groupe 2'
+      }
+  },
     getTodoById: (parent, { id }, { db }, info) => {
       const todo = db.todos.find((todo) => todo.id === id);
       if (!todo) {
