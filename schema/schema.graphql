@@ -1,5 +1,6 @@
 type Query {
   hello(name: String): String!
+   infos: Infos!
   getTodos: [Todo]!
   getTodoById(id: Int): Todo!
   getUsers: [User]!
